@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "test",
+      "username": "usernameTest",
+      "firstname": "test",
+      "lastname": "test",
+      "birthdate": "0001-01-01",
+      "imgURL": ""
+    }
+  ],
+  "reviews": [
+    {
+      "id": "UIDreview1",
+      "userId": "UIDuser1",
+      "gameId": "test_game",
+      "evaluation": 0,
+      "comment": "test"
+    }
+  ],
+  "preferences": [
+    {
+      "id": "test",
+      "userId": "UIDuser1",
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
+      "gameTags": [
+        "RPG"
+      ],
+      "visibility": true
+    }
+  ],
+  "platforms": [
+    "PC",
+    "PS5"
+  ]
+  
+}
