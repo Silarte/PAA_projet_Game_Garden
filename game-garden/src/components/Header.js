@@ -1,32 +1,63 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import React, { useState } from 'react';
+import './header.css';
 
-const pages = ['Compte', 'Boutique', 'Ma liste'];
-
-function ResponsiveAppBar() {
-
+function Header() {
+  const [activePage, setActivePage] = useState('Compte');
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <div className="header" style={{ backgroundColor: '#567153' }}>
+      <div
+        className={`header-page ${activePage === 'Compte' && 'active'}`}
+        onClick={() => setActivePage('Compte')}
+      >
+        <span className="header-page-text">
+          {activePage === 'Compte' ? (
+            <span className="header-page-active-text">Compte</span>
+          ) : (
+            'Compte'
+          )}
+        </span>
+      </div>
+      <div
+        className={`header-page ${activePage === 'Boutique' && 'active'}`}
+        onClick={() => setActivePage('Boutique')}
+      >
+        <span className="header-page-text">
+          {activePage === 'Boutique' ? (
+            <span className="header-page-active-text">Boutique</span>
+          ) : (
+            'Boutique'
+          )}
+        </span>
+      </div>
+      <div
+        className={`header-page ${activePage === 'Ma liste' && 'active'}`}
+        onClick={() => setActivePage('Ma liste')}
+      >
+        <span className="header-page-text">
+          {activePage === 'Ma liste' ? (
+            <span className="header-page-active-text">Ma liste</span>
+          ) : (
+            'Ma liste'
+          )}
+        </span>
+      </div>
+      <div
+        className={`header-page ${activePage === 'Amis' && 'active'}`}
+        onClick={() => setActivePage('Amis')}
+      >
+        <span className="header-page-text">
+          {activePage === 'Amis' ? (
+            <span className="header-page-active-text">Amis</span>
+          ) : (
+            'Amis'
+          )}
+        </span>
+      </div>
+      {activePage && <div className="active-page-bar" />}
+    </div>
   );
 }
-export default ResponsiveAppBar;
+
+export default Header;
